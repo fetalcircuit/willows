@@ -9,129 +9,157 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play The Willows.</tw-noscript></noscript></tw-story>
-<tw-storydata name="The Willows" startnode="1" creator="Twine" creator-version="2.7.1" format="Harlowe" format-version="3.3.7" ifid="9FA1963B-AE56-40C8-9E62-688458723E04" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="600,100" size="100,100">You and the Swede are paddling down the mighty Danube River, past Vienna, deep into the wilderness. The landscape changes, and the river grows wider. Strange, shifting sandbanks emerge, making navigation increasingly difficult. Around you, tall willows sway, their branches brushing the water.
+<tw-storydata name="The Willows" startnode="45" creator="Twine" creator-version="2.7.1" format="Harlowe" format-version="3.3.7" ifid="9FA1963B-AE56-40C8-9E62-688458723E04" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Special+Elite&display=swap');
 
-Suddenly, you spot something floating in the water ahead—dark, human-shaped, bobbing in the current.
+tw-story {
+  
+  background-image: url("https://github.com/fetalcircuit/willows/blob/main/assets/danube_01.png?raw=true");
+   background-repeat: no-repeat;
+   background-size: 100% 100%;
+  
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="willows" tags="" position="500,150" size="100,100">(set: $abFont to (text-style: &quot;expand&quot;, &quot;italic&quot;))(set: $slowtransition to (t8n: &quot;dissolve&quot;)+(click: ?page))$abFont[... After leaving Vienna and long before you come to Budapest, 
 
-[[Investigate the object-&gt;investigateObject]]
+$slowtransition[==the Danube enters a region of singular loneliness and desolation, where its waters spread away on all sides regardless of a main channel, 
 
-[[Ignore it and keep paddling-&gt;keepPaddling]]
+$slowtransition[==and the country becomes a swamp for miles upon miles, covered by a vast sea of low willow-bushes. 
 
-(set: $fear to 1)</tw-passagedata><tw-passagedata pid="2" name="investigateObject" tags="" position="400,200" size="100,100">You paddle closer to the object, your heart racing. It rolls lazily in the current, half-submerged, almost like a body. Your mind races with wild thoughts—someone drowned? Or worse?
+$slowtransition[==On the big maps this deserted area is painted in (text-colour:#99e9f2)[a fluffy blue], 
+
+$slowtransition[==growing fainter in color as it leaves the banks,
+
+$slowtransition[==and across it may be seen in large straggling letters the word 
+
+$slowtransition[==(text-style:&quot;bold&quot;)+(font: &#39;Special Elite&#39;)[Sumpfe]](click-replace: &quot;Sumpfe&quot;)[(font: &quot;EB Garamond&quot;)+$slowtransition[==meaning [[marshes]]]
+
+</tw-passagedata><tw-passagedata pid="2" name="investigateObject" tags="" position="350,800" size="100,100">You paddle closer to the object, your heart racing. It rolls lazily in the current, half-submerged, almost like a body. Your mind races with wild thoughts—someone drowned? Or worse?
 
 But as you draw closer, it becomes clear. It&#39;s just a large log, tangled in reeds and debris. You sigh in relief, but the uneasy feeling lingers.
 
-The Swede looks at you, eyes narrowed. &quot;Did you think it was...?&quot;
+A— looks at you, eyes narrowed. &quot;Did you think it was...?&quot;
 
 You nod, unsure of how to explain the feeling gnawing at you.
 
-[[Shake it off and continue-&gt;shakeitoff]]</tw-passagedata><tw-passagedata pid="3" name="keepPaddling" tags="" position="750,300" size="100,100">You decide not to investigate, but you can’t shake the image of the object in the water. As the boat drifts past, you catch a glimpse from the corner of your eye. It looks like a human form—limbs twisted unnaturally. You paddle harder, eager to leave it behind.
+[[Shake it off and continue-&gt;shakeitoff]](set: $body to true)</tw-passagedata><tw-passagedata pid="3" name="keepPaddling" tags="" position="650,850" size="100,100">You decide not to investigate, but you can’t shake the image of the object in the water. As the boat drifts past, you catch a glimpse from the corner of your eye. It looks like a human form—limbs twisted unnaturally. You paddle harder, eager to leave it behind.
 
-[[Focus on the journey ahead-&gt;journey]]</tw-passagedata><tw-passagedata pid="4" name="shakeitoff" tags="" position="400,325" size="100,100">You continue paddling, but the willows loom larger, their swaying branches like arms reaching toward you. The wind picks up, and strange, hollow sounds echo from the banks. You try to shake off your earlier fear, but it clings to you, an unseen weight.
+[[Focus on the journey ahead-&gt;journey]]</tw-passagedata><tw-passagedata pid="4" name="shakeitoff" tags="" position="350,925" size="100,100">You continue paddling, but the willows loom larger, their swaying branches like arms reaching toward you. The wind picks up, and strange, hollow sounds echo from the banks. You try to shake off your earlier fear, but it clings to you, an unseen weight.
 
 [[Keep paddling-&gt;journey]]
+(set: $afraid to it+1)</tw-passagedata><tw-passagedata pid="5" name="journey" tags="" position="500,900" size="100,100">The sun sinks lower in the sky, casting long shadows across the water. The river seems to stretch forever, winding between the islands of sandbanks. The willows on both sides seem to press in, thick and suffocating.
 
-(set: $fear to +1)</tw-passagedata><tw-passagedata pid="5" name="journey" tags="" position="600,325" size="100,100">The sun sinks lower in the sky, casting long shadows across the water. The river seems to stretch forever, winding between the islands of sandbanks. The willows on both sides seem to press in, thick and suffocating.
-
-The Swede motions to pull ashore for the night.
+A— motions to pull ashore for the night.
 
 [[Pull ashore-&gt;camp1]]
 
-[[Insist on continuing-&gt;continue1]]</tw-passagedata><tw-passagedata pid="6" name="camp1" tags="" position="625,550" size="100,100">The Swede and you set up camp on a desolate stretch of sandbank. The willows form a dark, swaying canopy above you. As the night deepens, the wind rises, and the strange sounds of the river grow louder.
+[[Insist on continuing-&gt;continue1]]</tw-passagedata><tw-passagedata pid="6" name="camp1" tags="" position="500,1075" size="100,100">A— and you set up camp on a desolate stretch of sandbank. You erect a small tent as A— adeptly manipulates a flint and twigs to create a small fire. The willows form a dark, swaying canopy above you. As the night deepens, the wind rises, and the strange sounds of the river grow louder.
 
 A low thud echoes from the water—something heavy has fallen into it. Your mind immediately flashes back to the &quot;body&quot; you thought you saw earlier.
 
 [[Investigate the sound-&gt;investigateWater]]
 
-[[Stay by the fire-&gt;fire]]</tw-passagedata><tw-passagedata pid="7" name="continue1" tags="" position="750,475" size="100,100">Ignoring the growing unease, you paddle further down the river, but soon the current grows too strong. The boat is swept towards another sandbank.
+[[Stay by the fire-&gt;fire]]</tw-passagedata><tw-passagedata pid="7" name="continue1" tags="" position="650,975" size="100,100">A— frowns.
 
-There is no choice but to stop.
+&quot;You do remember the Magyar&#39;s warning,&quot; he cautioned.
 
-[[Pull ashore-&gt;camp1]]
+You remember. Over a hearty breakfast at the inn outside of Pressburg, an affable Hungarian officer took notice of your laden packs and extended pleasantries. 
 
-(set: $fear to +1)</tw-passagedata><tw-passagedata pid="8" name="investigateWater" tags="" position="400,475" size="100,100">You leave the fire and approach the riverbank, peering into the water. The moonlight flickers across the surface, but nothing stirs. Then, out of the corner of your eye, you see it—something large, dark, and silent, drifting downstream.
+“If you&#39;ll permit me,” his friendly nature giving way to solemnity, “a warning: if you choose to take a side channel, you may find yourselves, when the flood subsides, forty miles from anywhere, high and dry, and you may easily starve. There are no people, no farms, no fishermen. The river, too, is still rising, and this wind will increase.”
+
+The rising river did not alarm you in the least, as you have had some experience navigating more dangerous tributaries than this. However, the matter of being left high and dry by a sudden subsidence of the waters might be serious, despite your extra stock of provisions. For the rest, the officer’s prophecy held true, and the wind, blowing down a perfectly clear sky, had been increasing steadily till it reached the dignity of a westerly gale.
+
+[[Continue on despite the warnings-&gt;danger]]
+
+[[Heed the warnings, and stop to camp-&gt;continue2]]</tw-passagedata><tw-passagedata pid="8" name="investigateWater" tags="" position="350,1050" size="100,100">You leave the comforting warmth of the fire and approach the riverbank, peering into the water. The moonlight flickers across the surface, but nothing stirs. Then, out of the corner of your eye, you see it—something large, dark, and silent, drifting downstream.
 
 It looks disturbingly similar to the shape you saw earlier.
 
-[[Call out to the Swede-&gt;callSwede]]
+[[Call out to A—-&gt;callA]]
 
-[[Keep watching in silence-&gt;watchWater]]
-
-(set: $fear to +1)</tw-passagedata><tw-passagedata pid="9" name="fire" tags="" position="500,800" size="100,100">Back at the camp, the fire crackles weakly, offering little comfort. The Swede stares into the flames, his face pale and haunted.
+[[Keep watching in silence-&gt;watchWater]]</tw-passagedata><tw-passagedata pid="9" name="fire" tags="" position="575,1250" size="100,100">At your camp the fire crackles weakly, offering little comfort. A— stares into the flames, his face pale and haunted.
 
 &quot;There&#39;s something wrong with this place,&quot; he says quietly. &quot;The willows... they watch us. There&#39;s something here that does not belong to this world.&quot;
 
-[[Agree with him-&gt;agree]]
+(if: $afraid &gt;= 3)[&quot;I feel it too,&quot; you whisper. &quot;We&#39;re not alone.&quot;
 
-[[Dismiss his fears-&gt;dismiss]]</tw-passagedata><tw-passagedata pid="10" name="callSwede" tags="" position="375,625" size="100,100">You call out to the Swede, your voice barely carrying over the wind. He comes quickly, looking alarmed.
+A— grunts, knowingly.
 
-&quot;What&#39;s wrong?&quot; he asks.
+[[You say, &quot;You seem to know something more about this place.&quot;-&gt;campfireStory1]]
 
-You point to the dark shape in the water, but as you do, it suddenly sinks beneath the surface without a sound. The Swede stares at the spot where it disappeared, his face pale.
-
-&quot;I told you,&quot; he mutters. &quot;This place... something&#39;s not right.&quot;
-
-[[Return to the campfire-&gt;fire]]</tw-passagedata><tw-passagedata pid="11" name="watchWater" tags="" position="500,600" size="100,100">You stay silent, eyes glued to the strange object. But before you can be sure of what you&#39;re seeing, it sinks beneath the surface, leaving nothing but ripples in its wake.
-
-Your heart pounds in your chest. The sense of being watched, or worse, *pursued*, settles over you.
-
-[[Return to the campfire-&gt;fire]]</tw-passagedata><tw-passagedata pid="12" name="agree" tags="" position="800,900" size="100,100">(set: $agree = TRUE)
-&quot;I feel it too,&quot; you whisper. &quot;We&#39;re not alone.&quot;
-
-The Swede grunts, knowingly.
-
-[[You say, &quot;You seem to know something more about this place.&quot;-&gt;campfireStory]]
-
-[[You choose to remain silent, practicing vigilance.-&gt;wind]]</tw-passagedata><tw-passagedata pid="13" name="dismiss" tags="" position="200,900" size="100,100">(set: $agree = FALSE)
-&quot;You&#39;re imagining things,&quot; you say, though your voice wavers. &quot;It’s just the wind.&quot;
+[[You choose to remain silent, practicing vigilance.-&gt;wind]]](else:)[&quot;You&#39;re imagining things,&quot; you say, though your voice wavers. &quot;It’s just the wind.&quot;
 
 But even as you speak, you can&#39;t shake the gnawing feeling of something *other* watching you from the shadows of the willows.
 
-[[Try to sleep-&gt;sleep1]]</tw-passagedata><tw-passagedata pid="14" name="enlistSwede" tags="" position="650,1400" size="100,100">You turn to the Swede, and he stands, at the ready. (if: $agree = TRUE)[You detect a reluctance in his demeaner, though you are aware that it may be your own fear getting the best of you.
-]
-You move towards the source of the eerie sound, your heart pounding in your chest. The Swede follows closely behind. The wind grows louder, more insistent, as though calling you forward.
+[[Try to sleep-&gt;sleep1]]]</tw-passagedata><tw-passagedata pid="10" name="callA" tags="" position="200,1300" size="100,100">You call out to A—, your voice barely carrying over the wind. He comes quickly, looking alarmed.
 
-The moment you step beyond the ring of light cast by the campfire, the world changes.
+&quot;What&#39;s wrong?&quot; he asks.
+
+You point to the dark shape in the water, but as you do, it suddenly sinks beneath the surface without a sound. A— stares at the spot where it disappeared, his face pale.
+
+&quot;I told you,&quot; he mutters. &quot;This place... something&#39;s not right.&quot;
+
+[[Return to the campfire-&gt;fire]](set: $shape to true)
+(set: $afraid to it+1)</tw-passagedata><tw-passagedata pid="11" name="watchWater" tags="" position="375,1175" size="100,100">You stay silent, eyes glued to the strange object. But before you can be sure of what you&#39;re seeing, it sinks beneath the surface, leaving nothing but ripples in its wake.
+
+Your heart pounds in your chest. The sense of being watched, or worse, *pursued*, settles over you.
+
+[[Return to the campfire-&gt;fire]](set: $shape to true)
+(set: $afraid to it+1)</tw-passagedata><tw-passagedata pid="12" name="enlistA" tags="" position="375,1950" size="100,100">You turn back to A—, and see that he is already alert, wide-eyed. He quickly stands, at the ready. 
+
+You step beyond the camp, towards the grove of willows where you sensed the figure. Your heart pounding in your chest. A— follows closely behind. The wind grows louder, more insistent, as though calling you forward.
+
+The moment you step beyond the scant light cast by the last of the campfire embers, the world *changes*.
 
 The willows sway violently, their branches moving like grasping fingers. You feel a pulse beneath the earth—something ancient, something alive.
 
 [[Keep moving-&gt;moveforward]]
 
-[[Run back to camp-&gt;runShelter]]</tw-passagedata><tw-passagedata pid="15" name="sleep1" tags="" position="425,1275" size="100,100">The shelter you’ve constructed feels flimsy against the vastness of the willows. The walls of the tent flap in the faint breeze, the sparse covering between you and the endless night offering little comfort. 
+[[Run back to camp-&gt;runShelter]]</tw-passagedata><tw-passagedata pid="13" name="sleep1" tags="" position="725,1525" size="100,100">The shelter you’ve constructed feels flimsy against the vastness of the willows. The walls of the tent flap in the faint breeze, a sparse covering between you and the willows offering little comfort. 
 
-You and the Swede lie in your sleeping bags, side by side, but there’s little talk. The fire outside crackles softly, but it only seems to deepen the silence beyond.
+You and A— lie in your pallets, side by side, but there’s little talk. The fire outside crackles softly, but it only seems to deepen the silence beyond.
 
 Time passes, but sleep does not come.
 
 The oppressive feeling from earlier still weighs heavy on your chest, as though the air itself is thicker here, harder to breathe. Every sound—the distant rustle of leaves, the occasional creak of wood—makes your pulse quicken. 
 
-You close your eyes, but the images of the day refuse to fade. The face in the tree, the swirling limbs in the light, the whispers that seemed to ride on the wind.
+(if: $afraid &gt;= 4)[You close your eyes, but the images of the day refuse to fade. (if: $body is true)[The eerie uncertainty of the current. ](if: $shape is true)[The shape in the water. ](if: $symbol is true)[The symbol or face in the tree. ](if: $pale is true)[The pale figure in the grove of willows. ](if: $voices is true)[A—&#39;s account of stolen voices.](if: $low is true)[The low voices from the trees.]
 
-[[Try to force yourself to sleep-&gt;forceSleep]]
+[[Adjust your pallet and will yourself to get some sleep-&gt;forceSleep]]
 
-[[Talk to the Swede-&gt;talkToSwede]]</tw-passagedata><tw-passagedata pid="16" name="moveforward" tags="" position="800,1500" size="100,100">The further you walk, the less certain you are of where you are. The landscape shifts, the trees no longer mere willows but towering, twisted forms. The ground beneath your feet pulses in time with your heartbeat.
+[[Talk to A—-&gt;talkToA]]](else:)[Despite the sudden bursts of wind that intermittently shake your makeshift shelter, you drift off for what seems like just [[a moment]].]</tw-passagedata><tw-passagedata pid="14" name="moveforward" tags="" position="600,1900" size="100,100">The further you walk, the less certain you are of where you are. The landscape shifts, the trees no longer mere willows but towering, twisted forms. The ground beneath your feet pulses in time with your heartbeat.
 
-Something is drawing you deeper, pulling at your mind, your soul. You feel the boundary between this world and another begin to blur.
+Something is drawing you deeper, pulling at your mind. Your vision tunnels. You feel the boundary between you, this world, and another begin to warp, slip, blur.
 
 [[Keep going-&gt;further]]
 
-[[Turn back-&gt;runShelter]]</tw-passagedata><tw-passagedata pid="17" name="returntocamp" tags="" position="775,1850" size="100,100">You return to the camp, the fire burning low and the wind rustling through the willows. The face on the tree lingers in your mind, an image you can’t shake. Whether it was a trick of the mind, an illusion of the wilderness, or something much worse, you’re left with a deep unease.
+[[Turn back-&gt;runShelter]]</tw-passagedata><tw-passagedata pid="15" name="returntocamp" tags="" position="950,1600" size="100,100">You return to the camp, the fire burning low and the wind rustling through the willows. The face on the tree lingers in your mind, an image you can’t shake. Whether it was a trick of the mind, an illusion of the wilderness, or something much worse, you’re left with a deep unease.
 
-You glance at the Swede, who sits by the fire, his brow furrowed in thought. He doesn’t mention the face again, but the tension between you both is palpable.
+You glance at A—, who sits by the fire, his brow furrowed in thought. He doesn’t mention the face again, but the tension between you both is palpable.
 
-There’s something out there. Something in the trees, in the willows. And it’s watching.</tw-passagedata><tw-passagedata pid="18" name="further" tags="" position="775,1675" size="100,100">The air around you grows heavy, thick with a pulsating energy that seems to reverberate through your bones. The sky above darkens unnaturally, despite no clouds in sight. You and the Swede stop walking—there’s no need for words. You both feel it now.
+There’s something out there. Something in the trees, in the willows. And it’s watching.
+
+[[You look to A— expectantly-&gt;campfireStory1]] 
+
+[[You retire to your shelter to try to sleep-&gt;sleep1]]</tw-passagedata><tw-passagedata pid="16" name="further" tags="" position="825,1900" size="100,100">You come somewhat to your senses as the air around you grows heavy, viscuous in your lungs, thick with a pulsating energy that reverberates through your bones. The sky above darkens unnaturally, despite no clouds in sight. You and A— stop walking—there’s no need for words. You both feel it now.
 
 Then, without warning, a *howling* begins.
 
-It isn’t wind, but a guttural wail that seems to come from everywhere and nowhere at once. The willows sway violently, their branches stretching like hands toward the sky. And then, you see it—*the thing*.
+It isn’t wind, but a guttural wail that seems to come from everywhere and nowhere at once. The towering willows sway violently, their branches stretching like hands toward the sky. And then, you see it—*the thing*.
 
 A force of light and shadow, swirling with impossible shapes. Limbs—dozens, maybe hundreds—writhing in and out of the shifting form, some human, some *not*. The light is blinding, but you can’t look away.
 
-The Swede screams, his voice merging with the howling force as he is suddenly lifted off the ground, his body convulsing violently. His scream is cut off as he’s *enveloped* by the light, limbs reaching out and pulling him in. You can’t comprehend what you’re seeing—your mind refuses to grasp it, slipping into madness as the shapes merge and twist.
+A— screams, his voice merging with the howling force as he is suddenly lifted off the ground, his body convulsing violently. His scream is cut off as he’s *enveloped* by the light, limbs reaching out and pulling him in. You can’t comprehend what you’re seeing—your mind refuses to grasp it, slipping into madness as the shapes grasp, twist, then *merge*.
 
 [[Run back to the shelter-&gt;runShelter]]
 
-[[Take the boat to escape-&gt;runBoat]]</tw-passagedata><tw-passagedata pid="19" name="End" tags="" position="625,2450" size="100,100"></tw-passagedata><tw-passagedata pid="20" name="runShelter" tags="" position="600,1550" size="100,100">You stumble back, your legs barely working as terror overwhelms you. The Swede’s body disappears into the light, and the howling grows louder, more insistent. You turn and sprint toward the camp, the air behind you pulsating with that terrible energy.
+[[Take the boat to escape-&gt;runBoat]]
+(set: $aAlive to false)</tw-passagedata><tw-passagedata pid="17" name="End" tags="" position="350,2700" size="100,100">*End.*
+
+
+
+[[*Restart*-&gt;remote]]</tw-passagedata><tw-passagedata pid="18" name="runShelter" tags="" position="625,2075" size="100,100">You stumble back, your legs barely working as terror overwhelms you. A—’s body disappears into the light, and the howling grows louder, more insistent. You turn and sprint toward the camp, the air behind you pulsating with that terrible energy.
 
 The shelter—a crude tent of canvas and driftwood—comes into view. Without thinking, you throw yourself inside, collapsing on the ground, your heart pounding in your ears.
 
@@ -141,17 +169,17 @@ Then, the light. It pierces through the cracks in the shelter, bathing everythin
 
 [[Stay silent and pray-&gt;staySilent]]
 
-[[Try to run again-&gt;runAgain]]</tw-passagedata><tw-passagedata pid="21" name="runBoat" tags="" position="625,1750" size="100,100">You rush toward the riverbank, toward the boat, barely able to control your fear. The willows thrash as if trying to block your path, but you push through, your mind racing.
+(if: $aAlive is false)[[[Try to run for the boat-&gt;runAgain]]](else:)[[[Wait, where is A—? He must still be out there!-&gt;sacrifice]]]</tw-passagedata><tw-passagedata pid="19" name="runBoat" tags="" position="825,2050" size="100,100">You rush toward the riverbank, toward the boat, barely able to control your fear. The willows thrash as if trying to block your path, but you push through, your mind racing.
 
 The boat is still tied. The force behind you surges closer, the light from the swirling limbs growing brighter, more frantic.
 
 You fumble with the knots, your hands shaking.
 
-[[Untie the boat and push off-&gt;untieBoat]]</tw-passagedata><tw-passagedata pid="22" name="staySilent" tags="" position="0,2150" size="100,100">You hold your breath, willing yourself to be still, to be invisible. The howling wind outside shifts, the voices that merge with it growing more guttural, more insistent. They *know* you&#39;re here.
+[[Untie the boat and push off-&gt;untieBoat]]</tw-passagedata><tw-passagedata pid="20" name="staySilent" tags="" position="325,2100" size="100,100">You hold your breath, willing yourself to be still, to be invisible. The howling wind outside shifts, the voices that merge with it growing more guttural, more insistent. They *know* you&#39;re here.
 
 The light intensifies, seeping through every crack in the shelter, but you force yourself to remain still. For a moment, the air goes silent.
 
-And then, from outside, you hear it—the Swede&#39;s voice. But it&#39;s not *his* voice. It&#39;s twisted, echoing unnaturally, as if speaking from some abyss.
+And then, from outside, you hear it—A—&#39;s voice. But it&#39;s not *his* voice. It&#39;s twisted, echoing unnaturally, as if speaking from some abyss.
 
 &quot;Come out.&quot;
 
@@ -159,29 +187,27 @@ The voice is wrong, inhuman, but it calls to you. The temptation to open the she
 
 [[Stay hidden-&gt;stayHidden]]
 
-[[Open the shelter-&gt;openShelter]]</tw-passagedata><tw-passagedata pid="23" name="runAgain" tags="" position="550,1975" size="100,100">You can’t stay here. The shelter won’t hold. You bolt from the shelter, running blindly toward the boat. The air behind you ripples with the approaching force, but you don’t look back.
+[[Open the shelter-&gt;openShelter]]
+(set: $afraid to it+1)</tw-passagedata><tw-passagedata pid="21" name="runAgain" tags="" position="775,2200" size="100,100">You can’t stay here. The shelter won’t hold. You bolt from the shelter, running blindly toward the boat. The air behind you ripples with the approaching force, but you don’t look back.
 
 The boat is still tied at the shore. You fumble with the knot, your hands shaking violently. The howling grows louder, the light reflecting off the water. You *feel* the presence behind you, closing in.
 
-[[Untie the boat and push off-&gt;untieBoat]]</tw-passagedata><tw-passagedata pid="24" name="stayHidden" tags="" position="125,2300" size="100,100">You resist the pull, your hands trembling as you clench your fists. The voice outside continues to beckon, the Swede’s distorted cries growing more desperate. But deep down, you know it’s not him. It’s something *else*.
+[[Untie the boat and push off-&gt;untieBoat]]</tw-passagedata><tw-passagedata pid="22" name="stayHidden" tags="" position="125,2175" size="100,100">You resist the urge to cry out, your hands trembling as you clench your fists. The voice outside continues to beckon, A—’s distorted cries growing more desperate. But deep down, you know it’s not him. It’s something *else*.
 
 The willows thrash against the shelter, and the light grows brighter, but you remain hidden.
 
 Eventually, the voices fade, and the howling diminishes. You remain in the shelter, trembling in the silence that follows.
 
-[[You do not sleep-&gt;sacrificeSwede]]</tw-passagedata><tw-passagedata pid="25" name="openShelter" tags="" position="475,2225" size="100,100">Against every instinct, you open the flap of the shelter. The light outside blinds you immediately, and for a brief moment, you see the shape—the thing of limbs and light, swirling in incomprehensible patterns. The Swede is there, or what remains of him, his face twisted in silent agony, his body woven into the limbs of the thing.
+[[You do not sleep-&gt;AsSacrifice]]
+(set: $afraid to it+1)</tw-passagedata><tw-passagedata pid="23" name="openShelter" tags="" position="550,2400" size="100,100">Against your every instinct, you open the flap of the shelter. The light outside blinds you immediately, and for a brief moment, you see the shape—a great pillar of limbs and light, swirling in incomprehensible patterns. A— is there, or what remains of him, his face twisted in agony, his body woven into the limbs of the thing that spirals into the night sky.
 
-Before you can scream, the light envelops you, and the world disappears.
-
-[[End]]</tw-passagedata><tw-passagedata pid="26" name="untieBoat" tags="" position="175,1725" size="100,100">You finally manage to untie the boat and push it into the water. You leap inside and paddle with all your strength, the river’s current pulling you away from the shore.
+Before you can scream, the light envelops you, and the world [[disappears-&gt;End]]</tw-passagedata><tw-passagedata pid="24" name="untieBoat" tags="" position="875,2350" size="100,100">You finally manage to untie the boat and push it into the water. You leap inside and paddle with all your strength, the river’s current pulling you away from the shore.
 
 But as you move further from the sandbank, the howling doesn’t stop. The light chases you, rippling across the water’s surface. The willows on both sides seem to bow toward you, their branches nearly touching the river.
 
 Suddenly, the current shifts. The boat lurches, and you realize it’s pulling you toward the center of the river—toward a whirlpool forming beneath the light.
 
-[[Fight the current-&gt;fightCurrent]]</tw-passagedata><tw-passagedata pid="27" name="fightCurrent" tags="" position="125,1875" size="100,100">(if: $fear is 4)
-
-[You paddle furiously, fighting against the pull of the whirlpool. The boat spins as the force tries to draw you in, but somehow you manage to hold steady. The shapes in the water—the writhing limbs and howling forms—seem to screech as you resist.
+[[Fight the current-&gt;fightCurrent]]</tw-passagedata><tw-passagedata pid="25" name="fightCurrent" tags="" position="1025,2500" size="100,100">(if: $afraid &lt;=4)[You paddle furiously, fighting against the pull of the whirlpool. The boat spins as the force tries to draw you in, but somehow you manage to hold steady. The shapes in the water—the writhing limbs and howling forms—seem to screech as you resist.
 
 With a final, desperate push, you break free of the current, the boat lurching violently as it shoots away from the whirlpool. The light behind you dims, and the howling fades as the river carries you to safety.
 
@@ -189,16 +215,13 @@ But as you drift downriver, the terror does not leave you. You look back toward 
 
 You’ve escaped, but not unscathed.
 
-The Swede is gone, consumed by the thing, and you know you will never be free of what you witnessed. The shapes, the howling voices, the blinding light—all haunt your thoughts, lurking just beneath the surface of your consciousness.
+A— is gone, consumed by the thing, and you know you will never be free of what you witnessed. The shapes, the howling voices, the blinding light—all haunt your thoughts, lurking just beneath the surface of your consciousness.
 
-Even worse, there’s the voice. The voice of the *thing* that mimicked the Swede, calling out in a twisted, distorted version of his words.
+Even worse, there’s the voice. The voice of the *thing* that mimicked A—, calling out in a twisted, distorted version of his words.
 
-[[&quot;Come out,&quot; it had said.-&gt;comeOut]]]
+[[&quot;Come out,&quot; it had said.-&gt;comeOut]]](else:)[You paddle furiously, but your limbs feel heavy, heavier, and finally drop to your sides. You stop paddling, and the current take control. The boat spins wildly as it’s pulled toward the center of the whirlpool. The light grows brighter, reflecting off the water and the writhing shapes beneath the surface.
 
-(else:)
-[You stop paddling, your arms exhausted, and let the current take control. The boat spins wildly as it’s pulled toward the center of the whirlpool. The light grows brighter, reflecting off the water and the writhing shapes beneath the surface.
-
-As the boat is dragged closer to the center, you notice *things* in the water—shapes, limbs, faces, all distorted and twisting in the current. You hear voices, many voices, whispering and calling to you. Some are familiar—the Swede’s voice, calling your name in a desperate plea, distorted and wrong.
+As the boat is dragged closer to the center, you notice *things* in the water—shapes, limbs, faces, all distorted and twisting in the current. You hear voices, many voices, whispering and calling to you. Some are familiar—A—’s voice, calling your name in a desperate plea, distorted and wrong.
 
 &quot;Come out.&quot;
 
@@ -206,62 +229,36 @@ The water beneath you churns, and the boat tilts dangerously. You grip the edges
 
 The light consumes everything. You are swallowed by the river, by the *thing*, by the willows. The world goes dark, and you are lost.
 
-You sink, the voices growing louder, pulling you deeper into the darkness.
-
-[[End]]]
-</tw-passagedata><tw-passagedata pid="28" name="giveInToCurrent" tags="" position="1000,2350" size="100,100">You stop paddling, your arms exhausted, and let the current take control. The boat spins wildly as it’s pulled toward the center of the whirlpool. The light grows brighter, reflecting off the water and the writhing shapes beneath the surface.
-
-As the boat is dragged closer to the center, you notice *things* in the water—shapes, limbs, faces, all distorted and twisting in the current. You hear voices, many voices, whispering and calling to you. Some are familiar—the Swede’s voice, calling your name in a desperate plea, distorted and wrong.
-
-&quot;Come out.&quot;
-
-The water beneath you churns, and the boat tilts dangerously. You grip the edges, but it’s too late. The current pulls you under. The last thing you see before the water closes over you is the faces, twisted in agony, reaching up from the depths.
-
-The light consumes everything. You are swallowed by the river, by the *thing*, by the willows. The world goes dark, and you are lost.
-
-You sink, the voices growing louder, pulling you deeper into the darkness.
-
-[[End]]</tw-passagedata><tw-passagedata pid="29" name="campfireStory" tags="" position="500,1000" size="100,100">The fire crackles in the dim twilight, casting flickering shadows on the willows that seem to sway in time with the stories. You and the Swede sit in uneasy silence for a moment, until he breaks it with a story that sends a chill through your bones.
-
-He leans closer to the fire, his face illuminated by its glow, his voice low and serious.
-
-Swede: &quot;There are stories... old stories, about this place. The locals, what few there are, they won&#39;t come near it. They say there are *people* here. Not like you or me. Invisible, unseen, but always watching. I&#39;ve heard of men who spent too long by the riverbanks, like we are now, and came back different. Changed. Their minds lost.&quot;
-
-He pauses, his eyes scanning the swaying willows as if the unseen people might be listening.
-
-Swede: &quot;There was one man—a traveler, like us—who claimed he saw them. Or at least heard them. They whispered to him in voices that weren’t his own, imitated the voices of people he knew, people he *trusted*. It drove him mad. Said he could never escape their whispers, even after he left this place. Said they followed him, speaking in the voices of his dead wife, his friends.&quot;
+You sink, the voices growing louder, pulling you deeper into the [[darkness-&gt;End]]].</tw-passagedata><tw-passagedata pid="26" name="campfireStory2" tags="" position="775,1350" size="100,100">A—: &quot;There was one man—a traveler, like us—who claimed he saw them. Or at least heard them. They whispered to him in voices that weren’t their own, imitated the voices of people he knew, people he *trusted*. It drove him mad. Said he could never escape their whispers, even after he left this place. Said they followed him, speaking in the voices of his dead wife, his friends.&quot;
 
 He leans back, his face stern, as if he doesn’t fully believe his own words—but there’s a hint of doubt.
 
-Swede: &quot;These things… they&#39;re not human. They&#39;re not spirits. They’re something else. Something older. He called them the &#39;unseen people,&#39; but I think... I think they&#39;re something we were never meant to understand.&quot;
+A—: &quot;These things… they&#39;re not human. They&#39;re not spirits. They’re something else. Something older. He called them the &#39;unseen people,&#39; but I think... I think they&#39;re something we were never meant to understand.&quot;
 
 A deep silence follows, and for a moment, you think you hear something, a faint whispering on the wind, but it’s probably just the willows brushing against each other.
 
 [[Attempt to sleep-&gt;sleep1]] 
 
-[[Remain vigilant-&gt;wind]]
+[[Remain vigilant-&gt;wind]](set: $voices to true)
+(set: $afriad to it+1)</tw-passagedata><tw-passagedata pid="27" name="comeOut" tags="" position="725,2425" size="100,100">And now, in the quiet of the nights that follow, you hear it still. A whisper in the trees, in the rustling of the wind, a phantom echo in your mind.
 
-(set: $fear to +1)</tw-passagedata><tw-passagedata pid="30" name="comeOut" tags="" position="175,2600" size="100,100">And now, in the quiet of the nights that follow, you hear it still. A whisper in the trees, in the rustling of the wind, a phantom echo in your mind.
+&quot;Come out.&quot;
 
-Swede: &quot;Come out.&quot;
+It’s always his voice. You know it’s not real, that A— is gone, and yet the imitation clings to you like a shadow. It’s as if the *thing* never truly let you go.
 
-It’s always his voice. You know it’s not real, that the Swede is gone, and yet the imitation clings to you like a shadow. It’s as if the *thing* never truly let you go.
-
-Each night, you see his face in your dreams. His body writhing in the light, his mouth forming that terrible scream before he was swallowed by the limbs. And always, the voice—his voice—calling to you, urging you to *come back*.
+Each night, you see his face in your dreams. His body writhing in a monstrous light, his mouth forming that terrible scream before he was swallowed by a glowing pillar of limbs. And always, the voice—his voice—calling to you, urging you to *come back*.
 
 You’ve survived the willows, but you can never escape them. They’ve followed you. The unseen people, or whatever that force was, will always be watching, waiting. In every whisper of the wind, in every shadow of a tree, they’re there.
 
-You realize now what the Swede meant with his story. The man who claimed to hear voices, who said they followed him—he wasn’t mad. He was telling the truth.
+(if: $story is true)[You realize now what A— meant with his story. The man who claimed to hear voices, who said they followed him—he wasn’t mad. He was telling the truth.
 
-And now, they’ve chosen you.
+And now, they’ve chosen [[you-&gt;End]].](else:)[They lie in wait for [[you-&gt;End]].](set: $afraid to it+1)</tw-passagedata><tw-passagedata pid="28" name="treeSymbol" tags="" position="1150,1575" size="100,100">As you move through the darkening grove, something catches your eye on the rough bark of a nearby willow. A symbol, at first glance—a strange, twisting mark. It almost seems like someone has carved it there long ago, but you can’t quite make it out from a distance.
 
-[[End]]</tw-passagedata><tw-passagedata pid="31" name="treeSymbol" tags="" position="1050,1950" size="100,100">As you move through the darkening grove, something catches your eye on the rough bark of a nearby willow. A symbol, at first glance—a strange, twisting mark. It almost seems like someone has carved it there long ago, but you can’t quite make it out from a distance.
-
-Curiosity stirs within you, and the pull to investigate is undeniable. You step closer, your pulse quickening.
+Curiosity stirs within you, and the pull to investigate is undeniable. You step closer, your pulse quickening. A spiral pattern of some sort.
 
 [[Inspect the symbol-&gt;inspectSymbol]]
 
-[[Leave it alone-&gt;returntocamp]]</tw-passagedata><tw-passagedata pid="32" name="inspectSymbol" tags="" position="1150,2150" size="100,100">The closer you get, the more the symbol takes on a new shape. The swirling lines twist into something more defined, something that wasn’t visible at first glance. What looked like simple carvings seem to merge with the bark itself, as if they’ve grown naturally.
+[[Leave it alone-&gt;returntocamp]]</tw-passagedata><tw-passagedata pid="29" name="inspectSymbol" tags="" position="1275,1725" size="100,100">The closer you get, the more the symbol takes on a new shape. The swirling lines twist into something more defined, something that wasn’t visible at first glance. What looked like simple carvings seem to merge with the bark itself, as if they’ve grown naturally. Indents. Small spirals, perfectly rendered. You blink, moving closer.
 
 A shiver runs down your spine when you realize—it’s not a symbol at all. It’s a *face*. The gnarled, contorted bark forms the unmistakable features of a face, half-hidden by the rough edges of the tree. Its eyes are closed, its mouth a wide, twisted grimace, as though frozen in some moment of pain or horror.
 
@@ -269,35 +266,35 @@ Your breath catches in your throat. The face looks too natural, too perfectly fo
 
 [[Laugh it off as your imagination-&gt;laughItOff]]
 
-[[Show the Swede-&gt;showSwede]]</tw-passagedata><tw-passagedata pid="33" name="laughItOff" tags="" position="1100,1650" size="100,100">You take a step back, forcing a laugh. It’s just the way the bark has grown, a trick of the light. You’ve been out here too long, in a place too strange. The willows play tricks on the mind. Surely, that’s all this is.
+[[Show A—-&gt;showA]]
+(set: $afraid to it+1)(set: $symbol to true)</tw-passagedata><tw-passagedata pid="30" name="laughItOff" tags="" position="1125,1700" size="100,100">You take a step back, forcing a laugh. It’s just the way the bark has grown, a trick of the light. You’ve been out here too long, in a place too strange. The willows play tricks on the mind. Surely, that’s all this is.
 
 You shake your head, trying to push the unsettling image from your thoughts.
 
-But as you turn to leave, a nagging feeling remains at the back of your mind. No matter how hard you try to dismiss it, you can&#39;t shake the feeling that the face was watching you, even with its eyes closed.
+But as you turn to leave, a nagging feeling remains at the back of your mind. No matter how hard you try to dismiss it, you can&#39;t shake the feeling that the face—if it *was* a face—was a work of intention, not accident.
 
-[[Return to camp-&gt;returntocamp]]</tw-passagedata><tw-passagedata pid="34" name="showSwede" tags="" position="375,2075" size="100,100">You step back from the tree, a chill crawling up your spine. The face in the bark—*it can’t be real*, but the longer you look, the more you feel as though it’s watching you, silently screaming. Your breath quickens, and you stumble back toward the camp.
+[[Return to camp-&gt;returntocamp]]</tw-passagedata><tw-passagedata pid="31" name="showA" tags="" position="1075,1825" size="100,100">You step back from the tree, a chill crawling up your spine. The face in the bark—*it can’t be real*, but the longer you look, the more you feel as though it’s watching you, silently screaming. Your breath quickens, and you stumble back toward the camp.
 
-You find the Swede crouched by the fire, focused on the flames, and you call him over, your voice trembling.
+You find A— crouched by the fire, focused on the flames, and you call him over, your voice trembling.
 
 Narrator: &quot;You need to see this. There’s… something on the tree.&quot;
 
-The Swede looks up, his expression confused but alert. He follows you to the tree, glancing warily at the surrounding willows. When you reach the twisted bark, you point at the face.
+A— looks up, his expression confused but alert. He follows you to the tree, glancing warily at the surrounding willows. When you reach the twisted bark, you point at the face.
 
-For a moment, the Swede says nothing, his face unreadable. Then, after a long pause, he exhales sharply and turns to you.
+For a moment, A— says nothing, his face unreadable. Then, after a long pause, he exhales sharply and turns to you.
 
-Swede: &quot;I see it.&quot;
+A—: &quot;I see it.&quot;
 
 His voice is low, but not surprised, as though he expected something like this. He reaches out, not touching the bark, but hovering his hand just above the twisted face.
 
-Swede: &quot;These things… they&#39;re not natural. I told you there’s something strange here. Something watching.&quot;
+A—: &quot;These things… they&#39;re not natural. I told you there’s something strange here. Something watching.&quot;
 
 He pulls his hand back quickly, his eyes never leaving the tree.
 
-Swede: &quot;We need to keep moving. Stay away from the trees.&quot;
+A—: &quot;We need to set up camp. Stay away from the trees.&quot;
 
 [[Return to the camp-&gt;returntocamp]]
-
-(set: $fear to +1)</tw-passagedata><tw-passagedata pid="35" name="forceSleep" tags="" position="100,1325" size="100,100">You squeeze your eyes shut, trying to will yourself into sleep. The more you try, the more restless you become. Your mind replays the day’s events, the face in the tree staring at you from behind closed eyelids.
+(set: $afraid to it+1)</tw-passagedata><tw-passagedata pid="32" name="forceSleep" tags="" position="575,1650" size="100,100">You squeeze your eyes shut, trying to will yourself into sleep. The more you try, the more restless you become. Your mind replays the day’s events, the face in the tree staring at you from behind closed eyelids.
 
 It’s no use.
 
@@ -307,51 +304,51 @@ You sit up suddenly, your heart pounding. The whispers stop, but the oppressive 
 
 [[Ignore it and stay inside the shelter-&gt;stayShelter]]
 
-[[Step outside to check-&gt;stepOutside]]</tw-passagedata><tw-passagedata pid="36" name="talkToSwede" tags="" position="275,1350" size="100,100">You turn toward the Swede, his silhouette barely visible in the dim light filtering through the thin fabric of the tent.
+[[Peek outside the shelter to see-&gt;lookOutside]]</tw-passagedata><tw-passagedata pid="33" name="talkToA" tags="" position="575,1525" size="100,100">You turn toward A—, his silhouette barely visible in the dim light filtering through the thin fabric of the tent.
 
-Narrator: &quot;Are you awake?&quot;
+You whispter, &quot;Are you awake?&quot;
 
 For a moment, there’s no response, and you think he might be sleeping after all. But then, quietly, he speaks.
 
-Swede: &quot;I’m awake.&quot;
+&quot;I’m awake.&quot;
 
 His voice is steady, but tense. You can tell he’s on edge, too.
 
-Narrator: &quot;I can’t sleep. I keep hearing things. It&#39;s like the willows are alive.&quot;
+You say, &quot;I can’t sleep. I keep hearing things. It&#39;s like the willows are alive.&quot;
 
-The Swede is silent for a while, then sighs softly.
+A— is silent for a while, then sighs softly.
 
-Swede: &quot;I hear it too. But it’s better if we don’t talk about it. Whatever it is, we don’t want to draw attention to it. Try to sleep. Tomorrow we’ll move, leave this place behind.&quot;
+&quot;I hear it too. But it’s better if we don’t talk about it. Whatever it is, we don’t want to draw attention to it. Try to sleep. Tomorrow we’ll move, leave this place behind.&quot;
 
 He rolls onto his side, pulling his blanket tighter. But you know he isn’t going to sleep either.
 
-[[Try to sleep-&gt;forceSleep]]</tw-passagedata><tw-passagedata pid="37" name="stayShelter" tags="" position="25,1500" size="100,100">You lie back down, determined to ignore the unsettling sounds from outside. It’s probably just the wind, or the creaking of the willows bending under some unseen force.
+[[Will yourself to rest-&gt;forceSleep]]</tw-passagedata><tw-passagedata pid="34" name="stayShelter" tags="" position="425,1775" size="100,100">You lie back down, determined to ignore the unsettling sounds from outside. It’s probably just the wind, or the creaking of the willows bending under some unseen force.
 
 But the feeling of being watched doesn’t go away. Even with your eyes closed, you feel it—something is out there, something that wasn’t there before.
 
 Your body remains tense, your mind racing with impossible thoughts.
 
-You feel the Swede stir, and sit up. He mutters something, and lays one hand on your shoulder.
+You feel A— stir, and sit up. He mutters something, and lays one hand on your shoulder.
 
 &quot;Stay,&quot; he whispers.
 
 Then, in an instant, he&#39;s out of his sleeping bag and tears through the opening of the tent. The silence is broken by a howling like you&#39;ve never heard, like no human or animal you&#39;ve ever encountered.
 
-[[You quickly follow the Swede, the damned fool!-&gt;sacrifice]]
+[[You quickly follow A—, the damned fool!-&gt;sacrifice]]
 
-[[You obey the Swede, and shut your eyes tightly-&gt;staySilent]]</tw-passagedata><tw-passagedata pid="38" name="stepOutside" tags="" position="275,1575" size="100,100">Unable to ignore the nagging feeling, you carefully slip out of your sleeping bag and move toward the entrance of the shelter. The Swede doesn’t stir, but you’re certain he’s still awake.
+[[You obey A—, and shut your eyes tightly-&gt;staySilent]]</tw-passagedata><tw-passagedata pid="35" name="lookOutside" tags="" position="725,1750" size="100,100">Unable to ignore the nagging feeling, you carefully slip off your pallet and move toward the entrance of the shelter. A— doesn’t stir, but you’re certain he’s still awake.
 
-You step outside, the cold air hitting you immediately, the fire’s embers barely glowing. The trees loom over the camp, their branches swaying in an almost rhythmic pattern. The night is deathly quiet, save for the rustle of leaves high above.
+You slowly pull back the flap of the tent and crane your neck so as to get the best view of your camp. The cold air hits you immediately, and the fire’s barely glowing embers provide no warmth. The trees loom over the camp, their branches swaying in an almost rhythmic pattern. The night is deathly quiet, save for the rustle of leaves high above.
 
-And then you hear it again—the whispering. It seems to come from all directions at once, surrounding you, though no source is visible. The wind tugs at your clothes, as if trying to pull you deeper into the trees.
+And then you hear it again—the whispering. It seems to come from all directions at once, surrounding you, though no source is visible. The wind tugs at your clothes, as if trying to pull you toward the grove of trees.
 
 Suddenly, from the darkness beyond the firelight, you hear a distinct *snap*—a twig breaking underfoot.
 
 You freeze, your breath caught in your throat.
 
-[[You listen-&gt;further]]
+[[You turn back to enlist A—-&gt;enlistA]]
 
-[[Rush back to the shelter-&gt;runShelter]]</tw-passagedata><tw-passagedata pid="39" name="investigateSound" tags="" position="600,1275" size="100,100">You take a few cautious steps toward the edge of the camp, the firelight barely reaching your feet. The sound—whatever it was—came from the darkness just beyond.
+[[Rush back to your pallet-&gt;stayShelter]]</tw-passagedata><tw-passagedata pid="36" name="investigateSound" tags="" position="275,1650" size="100,100">You take a few cautious steps toward the edge of the camp, the firelight barely reaching your feet. The sound—whatever it was—came from the darkness just beyond.
 
 Your eyes strain against the night, trying to make out anything in the shadows, but all you see are the twisting forms of the willows, their branches writhing gently in the wind.
 
@@ -361,35 +358,194 @@ Just as you think you might have imagined the sound, you feel something—a pres
 
 For a moment, you think you see something there. Something tall, pale, and motionless, watching you from just beyond the line of willows—but your eyes are having trouble adjusting to the darkness.
 
-[[Motion to the Swede, and step beyond the campfire for a better look-&gt;enlistSwede]]
+[[Motion to A—, and step beyond the campfire for a better look-&gt;enlistA]]
 
-[[Ignore your paranoia and try to sleep-&gt;sleep1]]</tw-passagedata><tw-passagedata pid="40" name="wind" tags="" position="650,1125" size="100,100">The wind picks up, whistling through the willows with a strange, otherworldly tone. You both listen, heartbeats quickening as the sound seems to shift into something resembling a low, guttural voice. It says nothing intelligible, but its tone is one of malevolent curiosity.
+[[Retreat to the tent and try to rest-&gt;forceSleep]] (set: $pale to true)</tw-passagedata><tw-passagedata pid="37" name="wind" tags="" position="350,1375" size="100,100">The wind picks up, whistling through the willows with a strange, otherworldly tone. You  listen, your heartbeat quickening as the sound seems to shift into something resembling a low, guttural voice. It says nothing intelligible, but its tone is one of malevolent curiosity.
 
-[[Investigate the source of the sound-&gt;investigateSound]]
+[[Investigate the source of the sound-&gt;investigateSound]](set: $low to true)
 
-[[Try to sleep-&gt;sleep1]]</tw-passagedata><tw-passagedata pid="41" name="sacrifice" tags="" position="350,1900" size="100,100">details about following Swede, who gibbers about needing a sacrifice so you will remain unharmed
+[[Talk to A— for reassurance-&gt;talkToA]]</tw-passagedata><tw-passagedata pid="38" name="sacrifice" tags="" position="75,1975" size="100,100">You tear out of the tent after A—, blindly thrashing through the limbs of willows and underbrush in pursuit.
 
-you muster strength to tear him back into the tent
+Then, quite unexpectedly, you find yourself in a clearing, what seems to be the island’s point. Ahead, a dark figure is outlined between the water and the sky. It is A—, already one foot in the river! You throw youself onto him, flinging your arms about his waist and dragging him shorewards with all your strength. 
 
-You nearly tackle the Swede back into the tent and clutch onto him as the wind tears and roars at the shelter. Despite his protests, he grasps onto you, bear-hugging for dear life. You both remain in this position for an unbearable amount of time, until the wind unceremoniously dies to a whistle, a soft moan, and then nothing. The stillness
+He struggles furiously against you, his cries pitching up to the whining of the cursed humming, then punctuated with nonsensical shrieks of, “I must go inside!” and “they&#39;re there, waiting! They&#39;ve been waiting!”
 
-Sleep never comes.
+You somehow wrestle your companion back to the tent, tackling him onto the rucksacks and bedcloths. You clutch onto him as the wind roars at the shelter. His protests lessen, and finally he grasps onto you, bear-hugging for dear life. You both remain in this position for an unbearable amount of time, until the wind unceremoniously dies to a whistle, a soft moan, and then nothing.
 
-[[Morning comes-&gt;morning]].</tw-passagedata><tw-passagedata pid="42" name="morning" tags="" position="0,2450" size="100,100">They find the body stuffed in the tree, the body covered in the same symbol you saw before.
+Through the faintest pale light creeping through the tent flap, you see A–&#39;s pained, stricken face.
 
-You and the Swede wordlessly pack your things and head to the boat, which is miraculously unscathed after the violence of the wind. You continue your silence well into your way down the Danube, as you re-enter the realm of river villages and quiet inns.
+&quot;It&#39;s over. They&#39;ve found another victim in our place.&quot;
 
-[[End]]</tw-passagedata><tw-passagedata pid="43" name="sacrificeSwede" tags="" position="425,2650" size="100,100">The Swede is the one in the tree.
+[[Morning comes-&gt;morning]]
+(set: $afraid to it+1)</tw-passagedata><tw-passagedata pid="39" name="morning" tags="" position="25,2300" size="100,100">After what seems an eternity, you perceive the faintest threads of dawn creeping through the flap of your tent. You and A— blink in the dawn light.
+
+Though you expected the remnants of a great storm, outside you are presented with a tranquil morning camp, the surrounding willows swaying almost impercetably in a lazy breeze. You breathe heavily, as the tranquility of the morning feels oppressive and monstrous, the willows constructing a malovolently false shadowplay to mock you. 
+
+Wordlessly, you and A— tear down the camp, packing as quickly as you can. You find your boat, tied off exactly where you left it. As you fumble with the rope, you hear A— gasp. He points down the shore, toward a small grove of stunted willows, the branches hanging heavily into the current.
+
+[[Something is tangled in the branches-&gt;the body]]</tw-passagedata><tw-passagedata pid="40" name="AsSacrifice" tags="" position="275,2400" size="100,100">After what seems an eternity, you perceive the faintest threads of dawn creeping through the flap of your tent. You blink at the mess of A—&#39;s empty pallet and his scattered belongings, spilling from his rucksack. You are up in an instant, out of the tent and into the almost unbearably chill air.
+
+You blink—though you expected the remnants of a great storm, you are presented with a tranquil morning camp, the surrounding willows swaying almost impercetably in a lazy breeze. You breathe heavily, as the tranquility of the morning feels oppressive and monstrous, the willows constructing a malovolently false shadowplay to mock you. 
+
+At your feet, where you expect to see a frantic path of footprints leading from your shelter, there is nothing. The ground is [[undisturbed]].
+(set: $afraid to it+1)</tw-passagedata><tw-passagedata pid="41" name="remote" tags="" position="500,525" size="100,100">You and your companion, A—, set out on the Danube at sunrise in a slim, hand-hewn canoe, with your meager supplies stuffed into two rucksacks. You rode the crest of a mid-July flood, curious to explore the islands and eddies in the remote channels to the southeast of Pressberg, the source of many tall tales and rumors amongst those in the river hamlets.
+
+By midday, the sense of remoteness from the world of humankind, the utter isolation, the fascination of this singular world of willows, winds, and waters, instantly casts a spell upon you. You and A– begin to chat a little less and laugh a little quieter as you allow the current to propel you forward, deeper into a tangled swamp of stunted willows and undergrowth, fluttering in a barely perceptible [[breeze]].</tw-passagedata><tw-passagedata pid="42" name="warnings" tags="" position="500,775" size="100,100">As the river grows wider, the willows become denser, more tangled. Groves of willows clutch at small islands formed by the rising waters, and split the river into a series of labyrinthine channels. Shifting sandbanks emerge, making navigation increasingly difficult. Around you, willows sag and sway on the banks, their branches brushing the water.
+
+Suddenly, you spot something floating in the water ahead—dark, oblong, bobbing in the current.
+
+[[Investigate the object-&gt;investigateObject]]
+
+[[Ignore it and keep paddling-&gt;keepPaddling]]</tw-passagedata><tw-passagedata pid="43" name="marshes" tags="" position="500,275" size="100,100">$abFont[In high flood this great acreage of sand, shingle-beds, and willow-grown islands is almost topped by the water, but in normal seasons the bushes bend and rustle in the free winds, showing their silver leaves to the sunshine in an ever-moving plain of bewildering beauty. 
+
+$slowtransition[==These willows never attain to the dignity of trees; 
+
+$slowtransition[==they have no rigid trunks; 
+
+$slowtransition[==they remain humble bushes, with rounded tops and soft outline, swaying on slender stems that answer to the least pressure of the wind; 
+
+$slowtransition[==supple as grasses, and so continually shifting that they somehow give the impression that the entire plain is moving and alive. 
+
+$slowtransition[==For the wind sends waves rising and falling over the whole surface, waves of leaves instead of waves of water, green swells like the sea, too, until the branches turn and lift, and then silvery white as their underside turns to the [[sun.]]]</tw-passagedata><tw-passagedata pid="44" name="sun." tags="" position="500,400" size="100,100">$abFont[Happy to slip beyond the control of the stern banks, the Danube here wanders about at will among the intricate network of channels intersecting the islands everywhere with broad avenues down which the waters pour with a shouting sound; making whirlpools, eddies, and foaming rapids; tearing at the sandy banks; carrying away masses of shore and willow-clumps; and forming new islands innumerably which shift daily in size and shape and possess at best an impermanent life, since the flood-time obliterates their very existence...
+
+(text-style: &quot;none&quot;)+$slowtransition[==—Algernon Blackwood
+$slowtransition[==&quot;The Willows&quot;
+$slowtransition[==[[1906-&gt;remote]]]</tw-passagedata><tw-passagedata pid="45" name="Begin" tags="" position="500,25" size="100,100">(set: $slowtransition to (t8n: &quot;dissolve&quot;)+(click: ?page))//Danube River//
+$slowtransition[==//Southeast of Poszony//
+$slowtransition[==//Austro-Hungarian Empire//
+$slowtransition[==[[July, 1905-&gt;willows]]
+(set: $aAlive to true)</tw-passagedata><tw-passagedata pid="46" name="romanticisms" tags="" position="350,675" size="100,100">A slight, fragmented sonnet comes to mind, something unearthed from the recesses of your mind by the shock of the present wilderness. You intone:
+
+$slowtransition[==//In shadowed woods where moonlight seldom gleams,
+In silence wary beasts behold the rustling leaves.
+No human dares to wander, not in dreams,
+For there the earth and sky weave eerie eaves.//
+
+$slowtransition[==//The trees, odd giants, tower high and old,
+Their limbs and rhizomes tangled twixt the damp.
+Beneath their boughs, the sour of fungi fold,
+Where rot and mold make easy midnight camp.//
+
+$slowtransition[==//So let the beasts in peace their silence keep,
+For in that land, our souls would only weep.//
+
+$slowtransition[==A— slows his paddling and turns to you. You blush, remembering yourself.
+
+&quot;[[Odd giants-&gt;warnings]],&quot; he murmurs, then nods approvingly. (set: $oddGiants to true)(set: $afraid to it+1)</tw-passagedata><tw-passagedata pid="47" name="breeze" tags="" position="500,650" size="100,100">After a long silence between you, a sudden, alien thought springs into your otherwise guileless reveries: such a wild place should require a special kind of passport to admit outsiders. Your presence suddently feels somewhat audacious, and even wrong, as you come without asking leave into a such a singular kingdom of wonder and magic.
+
+A kingdom that was reserved for the use of others who had a right to it.
+
+A kingdom with everywhere [[unwritten warnings-&gt;warnings]] to trespassers for those who had the imagination to discover them.
+
+You shake your head. Silly [[romanticisms]].</tw-passagedata><tw-passagedata pid="48" name="campfireStory1" tags="" position="525,1400" size="100,100">The fire crackles in the dim twilight, casting flickering shadows on the willows that seem to sway in time with the stories. You and A— sit in uneasy silence for a moment, until he breaks it with a story that sends a chill through your bones.
+
+He leans closer to the fire, his face illuminated by its glow, his voice low and serious.
+
+A—: &quot;There are stories... old stories, about this place. The locals, what few there are, they won&#39;t come near it. They say there are *people* here. Not like you or me. Invisible, unseen, but always watching. I&#39;ve heard of men who spent too long by the riverbanks, like we are now, and came back different. Changed. Their minds lost.&quot;
+
+He pauses, his eyes scanning the swaying willows as if the unseen people might be [[listening.-&gt;campfireStory2]](set: $story to true)
+</tw-passagedata><tw-passagedata pid="49" name="continue2" tags="" position="650,1100" size="100,100">You motion to a nearby island, and you and A— beach your boat and set about making camp. A— offers to set up the tent and make the fire.
+
+You set about finding dry wood for the fire before it grows too dark.
+
+[[Find kindling in the dense willow groves-&gt;treeSymbol]]
+
+[[Collect driftwood from the nearby shore-&gt;shore]]</tw-passagedata><tw-passagedata pid="50" name="shore" tags="" position="925,1150" size="100,100">The last beams of slanting sunlight refract off the river as you set about gathering driftwood from its banks. Suddenly you catch sight of something in the water, a ways off near the opposite bank. Before you could chide yourself for seeing things again, you nearly drop your armload of driftwood as you see with certainty a person standing in a small boat.
+
+Whether it is due to the refracting sunlight, or the wild movement of the illumined water, it is difficult to focus your sight properly upon the individual and his vessel weaving and dipping in the tremendous Danube currents. The individual stands to steer with a long oar, and seems to be looking in your direction while gesticulating broadly, even frantically. A voice comes across the water shouting something, but the wind drowns it so that no single word is audible.
+
+A—, hearing some commotion, is suddenly at your side.
+
+“He’s crossing himself,” A— says, shading his eyes with his hand. “He... he seems to be making the sign of the Cross... or is he waving? What do you...”
+
+Before you can react, the boater seems to be gone in a moment, melting away down there into the sea of willows where the sun caught them in the bend of the river and turned them into a great crimson wall of beauty in the most spectacular [[sunset]]. Mist, too, had begun to rise, so that the air was suddenly [[hazy]].</tw-passagedata><tw-passagedata pid="51" name="sunset" tags="" position="950,1350" size="100,100">“He saw your campfire smoke, probably,” you chuckle. “It would have been strange to simply pass us without acknowledging our presence.&quot;
+
+A— sighs.
+
+&quot;The locals do like to go on about fairies and elementals, possibly demons, too. Who knows, that fellow in the boat saw people on the islands for the first time in his life,” he added, after a slight pause, “and it scared him, probably.” 
+
+You chuckle, “But the Romans must have haunted all this region more or less with their shrines and sacred groves and elemental deities. This region is remote, yes, but all of Europe has been touched by human hands at some time or another.”
+
+&quot;Perhaps,&quot; A— nods, unconvincingly. You follow him back to [[camp-&gt;fire]], the driftwood you&#39;ve already collected having to suffice for the night.</tw-passagedata><tw-passagedata pid="52" name="hazy" tags="" position="1075,1250" size="100,100">You remain quiet for a moment, unsure of what to make of the boater. If he had been gesturing for help—mortal or heavenly—he was too far adrift for you to do anything about it.
+
+A— sighs.
+
+&quot;The locals do like to go on about fairies and elementals, possibly demons, too. Who knows, that fellow in the boat saw people on the islands for the first time in his life,” he added, after a slight pause, “and it scared him, that’s all.” 
+
+A—&#39;s tone of voice is not convincing. 
+
+&quot;Perhaps,&quot; you say, unsure.
+
+A— nods, unconvincingly. You follow him back to camp, the driftwood you&#39;ve already collected having to suffice for the night. You keep wondering at the wild gestures the figure made, trying to map them to some semblance of meaning. Regardless, [[it was too late now-&gt;fire]].
+(set: $afraid to it+1)</tw-passagedata><tw-passagedata pid="53" name="danger" tags="" position="925,900" size="100,100">&quot;There&#39;s daylight left,&quot; you gesture at the sky. &quot;It would be foolish to stop now and waste provisions.&quot;
+
+A— nods, but his downcast expression betrays doubts.
+
+You continue on as the light fades over the density of willows. The current picks up, and your boat jostles uncomfortably, dangerously. You chuckle to release the tension, but your voice is drowned by the rushing current.
+
+&quot;We should—&quot; A— begins, but halts suddenly as the boat violently strikes something unseen just below the surface. Before you can react, A— is overboard. You glimpse his face for just a moment, ghastly white, eyes wide with terror, before he is [[sucked under]].</tw-passagedata><tw-passagedata pid="54" name="a moment" tags="" position="1050,2325" size="100,100">You awake with a start. The wind outside has grown from occasional bursts to a full-fledged gale. Though you know the howling outside is simply the wind rushing through the low willow groves, it seems to be growing more guttural, more insistent. 
+
+You look to A—&#39;s pallet. He is gone, only rumpled bedclothes left behind.
+
+You hold your breath, willing yourself to be still, to be invisible. You feel disoriented, exposed.
+
+[[Call to A—-&gt;callOut]]
+
+[[Stay silent-&gt;staySilent]]</tw-passagedata><tw-passagedata pid="55" name="callOut" tags="" position="600,2225" size="100,100">&quot;*A—?!*&quot; you cry, projecting over the now almost deafening howl. 
+
+For a moment, the air goes silent. A soft, blue light begins to glow from just beyond the entrance to your tent. You wait a moment, listening.
+
+And then, from outside, you hear it—A—&#39;s voice. It echoes strangely, as if speaking from a cavern.
+
+&quot;Come out.&quot;
+
+[[Stay hidden-&gt;stayHidden]]
+
+[[Open the shelter-&gt;openShelter]]
+(set: $afraid to it+1)</tw-passagedata><tw-passagedata pid="56" name="undisturbed" tags="" position="400,2250" size="100,100">You gather what you can as quickly as possible and find your boat, tied off exactly where you left it. As you push off, a gentle Danube current sends you on your way, towards what you know to be inviting farmsteads and villages.
 
 But as you drift downriver, the terror does not leave you. You look back toward the sandbanks, now far in the distance, and see the willows, motionless and dark. The thing that was there, the force of light and limbs, has vanished from sight, but it hasn’t left your mind.
 
 You’ve escaped, but not unscathed.
 
-The Swede is gone, consumed by the thing, and you know you will never be free of what you witnessed. The shapes, the howling voices, the blinding light—all haunt your thoughts, lurking just beneath the surface of your consciousness.
+A— is gone, consumed by the thing, and you know you will never be free of what you witnessed. The shapes, the howling voices, the blinding light—all haunt your thoughts, lurking just beneath the surface of your consciousness.
 
-Even worse, there’s the voice. The voice of the *thing* that mimicked the Swede, calling out in a twisted, distorted version of his words.
+Even worse, there’s the voice. The voice of the *thing* that mimicked A—, calling out in a twisted, distorted version of his words.
 
-[[&quot;Come out,&quot; it had said.-&gt;comeOut]]</tw-passagedata></tw-storydata>
+[[&quot;Come out,&quot; it had said.-&gt;comeOut]]</tw-passagedata><tw-passagedata pid="57" name="the body" tags="" position="50,2450" size="100,100">It is the corpse of a man. Clearly he had drowned, but only few hours before, as his body hangs limply, sodden, a broken marionette cut from its strings. You guess that his body must have been swept down upon the island somewhere about the hour of the dawn—at the very time the howling gales passed. The high current had deposited it in the branches of the willow where it now hung, and had torn away much of the clothing from the body so that the neck and part of the chest lay bare, his bluish skin almost glowing in the morning sun. 
+
+&quot;What shall we do?&quot; A— whispered. &quot;Surely he deserves a burial for his... sacrifice? For us?&quot;
+
+[[Agree to a proper burial-&gt;bury]]
+
+[[Deny him—this is no business of yours-&gt;deny]]
+(set: $afraid to it+1)</tw-passagedata><tw-passagedata pid="58" name="deny" tags="" position="200,2550" size="100,100">As you shake your head and turn away, your foot slips—you tumble down the bank hard, colliding with the trunk of the willow and then into the cold of the shallow water. The willow branch supporting the corpse snaps, and the body drops heavily into the current. Before you have time to recover from the unexpected shock of your fall, you see the current bring the body to the surface, turning so that it became released from the grip of the underbrush and willow roots. The dead face turned uppermost, staring unblinking at the sky.
+
+A— shrieks, just as you witness it, too: the face and the exposed chest are pitted with small, beautifully formed indents. 
+
+Spirals.
+
+You watch in horror as the corpse spins around once more, bobs in the current, and is [[gone-&gt;End]].</tw-passagedata><tw-passagedata pid="59" name="bury" tags="" position="50,2675" size="100,100">You nod solemnly. It feels like the least you can do for the poor man. A— makes it to the willow first, steadying himself against its trunk.
+
+At the moment A— touches the willow there rises from its branches the loud sound of humming—the sound of several hummings—which pass with a vast commotion as of winged things in the air about you and disappear upwards into the sky, growing fainter and fainter till they finally cease into an impossible distance. 
+
+You feel—no, you *know*—you disturbed some living yet invisible creatures at work, and they have inexplicably retreated. Just as you come to this conclusion, the willow branch supporting the corpse snaps, and the body drops heavily into the current. 
+
+$slowtransition[==You watch, expecting it to surface. 
+
+$slowtransition[==A minute passes. 
+
+$slowtransition[==Two, then three. 
+
+$slowtransition[==The current continues to flow, undisturbed. 
+
+$slowtransition[==The body is simply gone, consumed either by the uncanny whims of the current, or by the dreadful things living amongst the [[willows-&gt;End]].</tw-passagedata><tw-passagedata pid="60" name="sucked under" tags="" position="1125,2675" size="100,100">You try to right the boat, but it begins to spin wildly. You are being pulled toward the spot where A— went under, a now growing whirlpool. 
+
+The gyre grows, and begins to emit a pale light, revealing *things* in its eye—silouettes, limbs, faces, all distorted and twisting in the current. You hear voices, many voices, whispering, chittering, and beckoning to you. Your fear turns to abject horror upon hearing one voice, everso familiar—it&#39;s A—’s voice, calling your name in a desperate plea, but it&#39;s echoing, hollow, and wrong.
+
+The water beneath you churns, and the boat tilts dangerously. In terror you grip the edges, but it’s too late. The current upends the boat and pulls you under. The last thing you see before the water closes over you is the faces, twisted in agony, clawing at you from the depths.
+
+The light consumes everything. You are swallowed by the river, by the *thing*, by the willows. The world goes dark, and you are [[lost-&gt;End]].</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
