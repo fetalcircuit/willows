@@ -58,7 +58,7 @@ You nod, unsure of how to explain the feeling gnawing at you.
 
 You half expect your companion to argue to push further downstream, but instead he nods solemnly and gestures toward a sandbank just visible through the dense willows, their branches dragging like fingers through the current.
 
-[[Head to the sandbar-&gt;camp1]](set: $afraid to it+1)+(set: $body to true)
+[[Head to the sandbar-&gt;camp1]](set: $afraid to it+1)(set: $body to true)
 
 [[Continue on for a bit further-&gt;journey]]</tw-passagedata><tw-passagedata pid="5" name="journey" tags="" position="500,900" size="100,100">The sun sinks lower in the sky, casting long shadows across the water. The river seems to stretch forever, winding between the islands of sandbanks. The willows on both sides seem to press in, thick and suffocating.
 
@@ -207,7 +207,7 @@ Eventually, the voices fade, and the howling diminishes. You remain in the shelt
 [[You do not sleep-&gt;AsSacrifice]]
 (set: $afraid to it+1)</tw-passagedata><tw-passagedata pid="23" name="openShelter" tags="" position="550,2400" size="100,100">Against your every instinct, you open the flap of the shelter. The light outside blinds you immediately, and for a brief moment, you see the shape—a great pillar of limbs and light, swirling in incomprehensible patterns. A— is there, or what remains of him, his face twisted in agony, his body woven into the limbs of the thing that spirals into the night sky.
 
-Before you can scream, the light envelops you, and the world [[disappears-&gt;End]]</tw-passagedata><tw-passagedata pid="24" name="untieBoat" tags="" position="875,2350" size="100,100">You finally manage to untie the boat and push it into the water. You leap inside and paddle with all your strength, the river’s current pulling you away from the shore.
+Before you can scream, the light envelops you, and the world [[disappears-&gt;End]].</tw-passagedata><tw-passagedata pid="24" name="untieBoat" tags="" position="875,2350" size="100,100">You finally manage to untie the boat and push it into the water. You leap inside and paddle with all your strength, the river’s current pulling you away from the shore.
 
 But as you move further from the sandbank, the howling doesn’t stop. The light chases you, rippling across the water’s surface. The willows on both sides seem to bow toward you, their branches nearly touching the river.
 
@@ -283,21 +283,15 @@ But as you turn to leave, a nagging feeling remains at the back of your mind. No
 
 You find A— crouched by the fire, focused on the flames, and you call him over, your voice trembling.
 
-Narrator: &quot;You need to see this. There’s… something on the tree.&quot;
+&quot;You need to see this. There’s… something on the tree.&quot;
 
-A— looks up, his expression confused but alert. He follows you to the tree, glancing warily at the surrounding willows. When you reach the twisted bark, you point at the face.
+A— looks up, his expression confused but alert. He follows you to the tree, glancing warily at the surrounding willows. When you reach the twisted bark, you point at the face. For a moment, A— says nothing, his face unreadable. Then, after a long pause, he exhales sharply and turns to you.
 
-For a moment, A— says nothing, his face unreadable. Then, after a long pause, he exhales sharply and turns to you.
-
-A—: &quot;I see it.&quot;
+&quot;I see it.&quot;
 
 His voice is low, but not surprised, as though he expected something like this. He reaches out, not touching the bark, but hovering his hand just above the twisted face.
 
-A—: &quot;These things… they&#39;re not natural. I told you there’s something strange here. Something watching.&quot;
-
-He pulls his hand back quickly, his eyes never leaving the tree.
-
-A—: &quot;We need to set up camp. Stay away from the trees.&quot;
+&quot;We need to set up camp. Stay away from the trees.&quot;
 
 [[Return to the camp-&gt;returntocamp]]
 (set: $afraid to it+1)</tw-passagedata><tw-passagedata pid="32" name="forceSleep" tags="" position="575,1650" size="100,100">You squeeze your eyes shut, trying to will yourself into sleep. The more you try, the more restless you become. Your mind replays the day’s events, the face in the tree staring at you from behind closed eyelids.
@@ -312,7 +306,7 @@ You sit up suddenly, your heart pounding. The whispers stop, but the oppressive 
 
 [[Peek outside the shelter to see-&gt;lookOutside]]</tw-passagedata><tw-passagedata pid="33" name="talkToA" tags="" position="575,1525" size="100,100">You turn toward A—, his silhouette barely visible in the dim light filtering through the thin fabric of the tent.
 
-You whispter, &quot;Are you awake?&quot;
+You whisper, &quot;Are you awake?&quot;
 
 For a moment, there’s no response, and you think he might be sleeping after all. But then, quietly, he speaks.
 
@@ -366,7 +360,9 @@ For a moment, you think you see something there. Something tall, pale, and motio
 
 [[Motion to A—, and step beyond the campfire for a better look-&gt;enlistA]]
 
-[[Retreat to the tent and try to rest-&gt;forceSleep]] (set: $pale to true)</tw-passagedata><tw-passagedata pid="37" name="wind" tags="" position="350,1375" size="100,100">The wind picks up, whistling through the willows with a strange, otherworldly tone. You  listen, your heartbeat quickening as the sound seems to shift into something resembling a low, guttural voice. It says nothing intelligible, but its tone is one of malevolent curiosity.
+[[Retreat to the tent and try to rest-&gt;forceSleep]] (set: $pale to true)</tw-passagedata><tw-passagedata pid="37" name="wind" tags="" position="350,1475" size="100,100">You retire to your shelter and pallets, though you have no intention to sleep. Not now. Not here. The day&#39;s portents weigh heavily on you. (if: $body is true)[The eerie uncertainty of the current. ](if: $shape is true)[The shape in the water. ](if: $symbol is true)[The spiral—or face?—in the tree. ](if: $pale is true)[The pale figure in the grove of willows. ](if: $voices is true)[A—&#39;s account of stolen voices. ](if: $low is true)[The low voices from the trees.]
+
+The wind outside picks up, whistling through the willows with a strange, otherworldly tone. You listen, your heartbeat quickening as the sound seems to shift into something resembling a low, guttural voice. It says nothing intelligible, but its tone is one of malevolent curiosity.
 
 [[Investigate the source of the sound-&gt;investigateSound]](set: $low to true)
 
