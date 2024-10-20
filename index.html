@@ -9,7 +9,9 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play The Willows.</tw-noscript></noscript></tw-story>
-<tw-storydata name="The Willows" startnode="45" creator="Twine" creator-version="2.7.1" format="Harlowe" format-version="3.3.7" ifid="9FA1963B-AE56-40C8-9E62-688458723E04" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Special+Elite&display=swap');
+<tw-storydata name="The Willows" startnode="61" creator="Twine" creator-version="2.7.1" format="Harlowe" format-version="3.3.7" ifid="9FA1963B-AE56-40C8-9E62-688458723E04" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Special+Elite&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
 
 tw-story {
   
@@ -38,7 +40,7 @@ $slowtransition[==growing fainter in color as it leaves the banks,
 
 $slowtransition[==and across it may be seen in large straggling letters the word 
 
-$slowtransition[==(text-style:&quot;bold&quot;)+(font: &#39;Special Elite&#39;)[Sumpfe]](click-replace: &quot;Sumpfe&quot;)[(font: &quot;EB Garamond&quot;)+$slowtransition[==meaning [[marshes]]]</tw-passagedata><tw-passagedata pid="2" name="investigateObject" tags="" position="350,800" size="100,100">You paddle closer to the object, your heart racing. It rolls lazily in the current, half-submerged, almost like a body. Your mind races with wild thoughts—someone drowned? Or worse?
+$slowtransition[==(text-style:&quot;bold&quot;)+(font: &quot;IM Fell English SC&quot;)[Sumpfe]](click-replace: &quot;Sumpfe&quot;)[(font: &quot;EB Garamond&quot;)+$slowtransition[==meaning [[marshes]]]</tw-passagedata><tw-passagedata pid="2" name="investigateObject" tags="" position="275,800" size="100,100">You paddle closer to the object, your heart racing. It rolls lazily in the current, half-submerged, almost like a body. Your mind races with wild thoughts—the remains of an animal, washed away by the flood? Or... some*one* drowned by the rising waters?
 
 But as you draw closer, it becomes clear. It&#39;s just a large log, tangled in reeds and debris. You sigh in relief, but the uneasy feeling lingers.
 
@@ -46,12 +48,19 @@ A— looks at you, eyes narrowed. &quot;Did you think it was...?&quot;
 
 You nod, unsure of how to explain the feeling gnawing at you.
 
-[[Shake it off and continue-&gt;shakeitoff]](set: $body to true)</tw-passagedata><tw-passagedata pid="3" name="keepPaddling" tags="" position="650,850" size="100,100">You decide not to investigate, but you can’t shake the image of the object in the water. As the boat drifts past, you catch a glimpse from the corner of your eye. It looks like a human form—limbs twisted unnaturally. You paddle harder, eager to leave it behind.
+[[Remain vigilant-&gt;vigilance]]
 
-[[Focus on the journey ahead-&gt;journey]]</tw-passagedata><tw-passagedata pid="4" name="shakeitoff" tags="" position="350,925" size="100,100">You continue paddling, but the willows loom larger, their swaying branches like arms reaching toward you. The wind picks up, and strange, hollow sounds echo from the banks. You try to shake off your earlier fear, but it clings to you, an unseen weight.
+[[Shake it off and continue-&gt;journey]]</tw-passagedata><tw-passagedata pid="3" name="keepPaddling" tags="" position="650,850" size="100,100">You decide not to investigate, but you can’t shake the image of the object in the water. As the boat drifts past, you catch a glimpse from the corner of your eye. It looks like a human form—limbs twisted unnaturally. You paddle harder, eager to leave it behind.
 
-[[Keep paddling-&gt;journey]]
-(set: $afraid to it+1)</tw-passagedata><tw-passagedata pid="5" name="journey" tags="" position="500,900" size="100,100">The sun sinks lower in the sky, casting long shadows across the water. The river seems to stretch forever, winding between the islands of sandbanks. The willows on both sides seem to press in, thick and suffocating.
+[[Focus on the journey ahead-&gt;journey]]</tw-passagedata><tw-passagedata pid="4" name="vigilance" tags="" position="225,925" size="100,100">You continue paddling, but the willows loom larger, their swaying branches like arms reaching toward you. The wind picks up, and strange, hollow sounds echo from the banks. You try to shake off your earlier fear, but it clings to you, an unseen weight.
+
+&quot;We should find somewhere to camp for the night,&quot; you call to A— over the increasingly rough waters.
+
+You half expect your companion to argue to push further downstream, but instead he nods solemnly and gestures toward a sandbank just visible through the dense willows, their branches dragging like fingers through the current.
+
+[[Head to the sandbar-&gt;camp1]](set: $afraid to it+1)+(set: $body to true)
+
+[[Continue on for a bit further-&gt;journey]]</tw-passagedata><tw-passagedata pid="5" name="journey" tags="" position="500,900" size="100,100">The sun sinks lower in the sky, casting long shadows across the water. The river seems to stretch forever, winding between the islands of sandbanks. The willows on both sides seem to press in, thick and suffocating.
 
 A— motions to pull ashore for the night.
 
@@ -69,13 +78,7 @@ A low thud echoes from the water—something heavy has fallen into it. Your mind
 
 You remember. Over a hearty breakfast at the inn outside of Pressburg, an affable Hungarian officer took notice of your laden packs and extended pleasantries. 
 
-“If you&#39;ll permit me,” his friendly nature giving way to solemnity, “a warning: if you choose to take a side channel, you may find yourselves, when the flood subsides, forty miles from anywhere, high and dry, and you may easily starve. There are no people, no farms, no fishermen. The river, too, is still rising, and this wind will increase.”
-
-The rising river did not alarm you in the least, as you have had some experience navigating more dangerous tributaries than this. However, the matter of being left high and dry by a sudden subsidence of the waters might be serious, despite your extra stock of provisions. For the rest, the officer’s prophecy held true, and the wind, blowing down a perfectly clear sky, had been increasing steadily till it reached the dignity of a westerly gale.
-
-[[Continue on despite the warnings-&gt;danger]]
-
-[[Heed the warnings, and stop to camp-&gt;continue2]]</tw-passagedata><tw-passagedata pid="8" name="investigateWater" tags="" position="350,1050" size="100,100">You leave the comforting warmth of the fire and approach the riverbank, peering into the water. The moonlight flickers across the surface, but nothing stirs. Then, out of the corner of your eye, you see it—something large, dark, and silent, drifting downstream.
+“If you&#39;ll permit me,” his friendly nature giving way to solemnity, “a warning: if you choose to take a side channel, you may find yourselves, when the flood subsides, forty miles from anywhere, high and dry, and you may easily starve. There are no people, no farms, no fishermen. The river, too, is still rising, and this [[wind-&gt;magyar]] will increase.”</tw-passagedata><tw-passagedata pid="8" name="investigateWater" tags="" position="225,1075" size="100,100">You leave the comforting warmth of the fire and approach the riverbank, peering into the water. The moonlight flickers across the surface, but nothing stirs. Then, out of the corner of your eye, you see it—something large, dark, and silent, drifting downstream.
 
 It looks disturbingly similar to the shape you saw earlier.
 
@@ -95,13 +98,13 @@ A— grunts, knowingly.
 
 But even as you speak, you can&#39;t shake the gnawing feeling of something *other* watching you from the shadows of the willows.
 
-[[Try to sleep-&gt;sleep1]]]</tw-passagedata><tw-passagedata pid="10" name="callA" tags="" position="200,1300" size="100,100">You call out to A—, your voice barely carrying over the wind. He comes quickly, looking alarmed.
+[[Try to sleep-&gt;sleep1]]]</tw-passagedata><tw-passagedata pid="10" name="callA" tags="" position="125,1300" size="100,100">You call out to A—, your voice barely carrying over the wind. He comes quickly, looking alarmed.
 
 &quot;What&#39;s wrong?&quot; he asks.
 
 You point to the dark shape in the water, but as you do, it suddenly sinks beneath the surface without a sound. A— stares at the spot where it disappeared, his face pale.
 
-&quot;I told you,&quot; he mutters. &quot;This place... something&#39;s not right.&quot;
+&quot;This place,&quot; he mutters, &quot;... something&#39;s not right.&quot;
 
 [[Return to the campfire-&gt;fire]](set: $shape to true)
 (set: $afraid to it+1)</tw-passagedata><tw-passagedata pid="11" name="watchWater" tags="" position="375,1175" size="100,100">You stay silent, eyes glued to the strange object. But before you can be sure of what you&#39;re seeing, it sinks beneath the surface, leaving nothing but ripples in its wake.
@@ -438,9 +441,9 @@ $slowtransition[==A— slows his paddling and turns to you. You blush, rememberi
 
 A kingdom that was reserved for the use of others who had a right to it.
 
-A kingdom with everywhere [[unwritten warnings-&gt;warnings]] to trespassers for those who had the imagination to discover them.
+A kingdom with everywhere unwritten [[warnings-&gt;romanticisms]] to trespassers for those who had the imagination to discover them.
 
-You shake your head. Silly [[romanticisms]].</tw-passagedata><tw-passagedata pid="48" name="campfireStory1" tags="" position="525,1400" size="100,100">The fire crackles in the dim twilight, casting flickering shadows on the willows that seem to sway in time with the stories. You and A— sit in uneasy silence for a moment, until he breaks it with a story that sends a chill through your bones.
+You shake your head. Silly [[romanticisms-&gt;warnings]].</tw-passagedata><tw-passagedata pid="48" name="campfireStory1" tags="" position="525,1400" size="100,100">The fire crackles in the dim twilight, casting flickering shadows on the willows that seem to sway in time with the stories. You and A— sit in uneasy silence for a moment, until he breaks it with a story that sends a chill through your bones.
 
 He leans closer to the fire, his face illuminated by its glow, his voice low and serious.
 
@@ -480,7 +483,7 @@ A—&#39;s tone of voice is not convincing.
 &quot;Perhaps,&quot; you say, unsure.
 
 A— nods, unconvincingly. You follow him back to camp, the driftwood you&#39;ve already collected having to suffice for the night. You keep wondering at the wild gestures the figure made, trying to map them to some semblance of meaning. Regardless, [[it was too late now-&gt;fire]].
-(set: $afraid to it+1)</tw-passagedata><tw-passagedata pid="53" name="danger" tags="" position="925,900" size="100,100">&quot;There&#39;s daylight left,&quot; you gesture at the sky. &quot;It would be foolish to stop now and waste provisions.&quot;
+(set: $afraid to it+1)</tw-passagedata><tw-passagedata pid="53" name="danger" tags="" position="1100,1025" size="100,100">&quot;There&#39;s daylight left,&quot; you gesture at the sky. &quot;It would be foolish to stop now and waste provisions.&quot;
 
 A— nods, but his downcast expression betrays doubts.
 
@@ -548,7 +551,23 @@ The gyre grows, and begins to emit a pale light, revealing *things* in its eye�
 
 The water beneath you churns, and the boat tilts dangerously. In terror you grip the edges, but it’s too late. The current upends the boat and pulls you under. The last thing you see before the water closes over you is the faces, twisted in agony, clawing at you from the depths.
 
-The light consumes everything. You are swallowed by the river, by the *thing*, by the willows. The world goes dark, and you are [[lost-&gt;End]].</tw-passagedata></tw-storydata>
+The light consumes everything. You are swallowed by the river, by the *thing*, by the willows. The world goes dark, and you are [[lost-&gt;End]].</tw-passagedata><tw-passagedata pid="61" name="Title" tags="" position="350,25" size="100,100">(set: $slowtransition to (t8n: &quot;dissolve&quot;)+(click: ?page))(text-size: 2)+(font: &quot;IM Fell English SC&quot;)[The Willows]
+
+Tiffany Funk
+
+
+
+$slowtransition[==(text-style:&quot;superscript&quot;)+(text-size: .8)[based on //The Willows// by Algernon Blackwood, 1906
+
+$slowtransition[==Note: Parts of this game make use of sound effects. Play with headphones for the optimal experience.]
+
+
+
+$slowtransition[==[[Begin]]</tw-passagedata><tw-passagedata pid="62" name="magyar" tags="" position="800,1025" size="100,100">The rising river did not alarm you in the least, as you have had some experience navigating more dangerous tributaries than this. However, the matter of being left high and dry by a sudden subsidence of the waters might be serious, despite your extra stock of provisions. For the rest, the officer’s prophecy held true, and the wind, blowing down a perfectly clear sky, had been increasing steadily till it reached the dignity of a westerly gale.
+
+[[Continue on despite the warnings-&gt;danger]]
+
+[[Heed the warnings, and stop to camp-&gt;continue2]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
